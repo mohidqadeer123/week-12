@@ -17,6 +17,16 @@ def update_board(current_board):
                 current_board[max(0, i-1):min(rows, i+2), max(0, j-1):min(cols, j+2)]
             ) - current_board[i, j]
 
+            # Apply rules
+            if current_board[i, j] == 1:
+                if live_neighbors < 2 or live_neighbors > 3:
+                    updated_board[i, j] = 0
+                else:
+                    updated_board[i, j] = 1
+            else:
+                if live_neighbors == 3:
+                    updated_board[i, j] = 1
+
     return updated_board
 
 
