@@ -9,7 +9,13 @@ def update_board(current_board):
     '''Update the board accordingly for next step in Conway's game'''
     rows, cols = update_board.shape
     updated_board = np.zeros((rows, cols), dtype=int)
-
+    
+    for i in range (rows):
+        for j in range (cols):
+            # Region around (r,c)
+            live_neighbors = np.sum(
+                current_board[max(0, i-1):min(rows, i+2), max(0, j-1):min(cols, j+2)]
+            ) - current_board[i, j]
 
     return updated_board
 
