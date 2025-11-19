@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def update_board(current_board):
     '''Update the board accordingly for next step in Conway's game'''
-    rows, cols = update_board.shape
+    rows, cols = current_board.shape
     updated_board = np.zeros((rows, cols), dtype=int)
     
     for i in range (rows):
@@ -25,7 +25,8 @@ def update_board(current_board):
                     updated_board[i, j] = 1
             else:
                 if live_neighbors == 3:
-                    updated_board[i, j] = 1
+                    updated_board[i, j] = 1 
+                    
 
     return updated_board
 
