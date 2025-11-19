@@ -6,8 +6,10 @@ import matplotlib.pyplot as plt
 
 
 def update_board(current_board):
-    # your code here ...
-    updated_board = current_board
+    '''Update the board accordingly for next step in Conway's game'''
+    rows, cols = update_board.shape
+    updated_board = np.zeros((rows, cols), dtype=int)
+
 
     return updated_board
 
